@@ -30,6 +30,9 @@ window.RecurringSelectDialog =
       dialog_height = @content.outerHeight()
       if dialog_height < 80
         dialog_height = 80
+      dialog_width = @content.outerWidth()
+      if dialog_width < 280
+        dialog_width = 280
       margin_top = (window_height - dialog_height)/2 - 30
       margin_top = 10 if margin_top < 10
       # if dialog_height > window_height - 20
@@ -38,6 +41,7 @@ window.RecurringSelectDialog =
       new_style_hash =
         "margin-top" : margin_top+"px"
         "min-height" : dialog_height+"px"
+        "width" : dialog_width+"px"
 
       if initial_positioning?
         @inner_holder.css new_style_hash
